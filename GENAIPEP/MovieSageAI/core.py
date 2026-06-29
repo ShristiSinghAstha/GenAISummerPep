@@ -16,8 +16,8 @@ class Movie(BaseModel):
     director: Optional[str]
     language: Optional[str]
     country: Optional[str]
-    plot_summary: Optional[str]
-    main_characters: List[str]
+    plot_summary: List[str] = {"description": "There should be a brief description of the movie plot."}
+    main_characters: List[str]=None
     theme: Optional[str]
     notable_awards: List[str]
     box_office_performance: Optional[str]
