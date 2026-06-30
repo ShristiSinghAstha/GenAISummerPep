@@ -15,7 +15,7 @@ Vector Store--A vector store is a database optimized for storing and searching v
 Use Approximate Nearest neighbours algorithms like-  HNSW, IVF, PQ
 
 
--------------SYSTEM DESIGN-----------------
+#"-------------SYSTEM DESIGN-----------------"
 System Design is the process of defining the architecture, components, data flow, and infrastructure of a software system to meet functional and non-functional requirements.
 
 
@@ -108,7 +108,7 @@ It handles transactions across multiple micro services without using single glob
 Core Idea: Instead of core big transaction, u break it into small local transaction.
 If something fails -> undo previous steps (compensation).
 
-#Transaction: SAGA : the design pattern hanles transactions across multiple microservices without using single global DB transaction
+Transaction: SAGA : the design pattern hanles transactions across multiple microservices without using single global DB transaction
 Core idea: instead of core big transaction, u break it into small local transaction If something fails:-> u undo previous step(compensation)
 
 2 types of SAGA:=> 
@@ -117,7 +117,7 @@ Core idea: instead of core big transaction, u break it into small local transact
 (ii) Orchestration(central control):- one service controls the flow(saga orchestration)
                                         flow-> orchestratior->call order->then payment->then inventory
 
-# Data Consistancy (Outbox) :=> ex: 
+ Data Consistancy (Outbox) :=> ex: 
 when a user place order, u need to do 2 things:- (i) save the order in database (ii) send the event -> "order created"(so that payment service can act)
 Problem(without outbox): what if:- 
 *order saved
@@ -137,7 +137,7 @@ step 1: save both in one db transaction,
 
 
 Part 2: API Gateway vs load balancer
-# API gateway:- "API gateway is a single entry point for all the clients reqs in a system with multiple backend services."
+ API gateway:- "API gateway is a single entry point for all the clients reqs in a system with multiple backend services."
 User => GATEWAY :- 
     a. User
     b. payment
@@ -147,7 +147,7 @@ what does api gateway do?
 b. handles auth and authorization
 c. perform rate Limitingow.
 
-#Load Balancer:- "A load balancer is a device or software that distributes incoming network traffic across multiple servers to improve availability, performance, and reliability."
+Load Balancer:- "A load balancer is a device or software that distributes incoming network traffic across multiple servers to improve availability, performance, and reliability."
 
 if it's about region--> API gateway comes first, then load balancer
 if it's  about locality--> Load balancer comes first.
